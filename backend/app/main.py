@@ -16,7 +16,7 @@ def main():
     if validate_prompt(user_prompt):
         
         dialogue = generate_dialogue(user_prompt=user_prompt)
-        print(dialogue)
+        print(f"Dialogue - {dialogue}")
     
     else: 
         raise ValueError(f"""Input too long. Length of input = {len(user_prompt)}. Number of words must be less that {MAX_PROMPT_LENGTH}""")
@@ -25,9 +25,9 @@ def main():
 def generate_dialogue(user_prompt: str) -> str:
     client = OpenAI()
 
-    
+    print(f"User prompt - {user_prompt}")
     content = f"Translate the {user_prompt} to German and create a sentence using the translated word"
-    print(content)
+    print(f"System prompt - {content}")
     
     completion = client.chat.completions.create(
     model="gpt-3.5-turbo",
