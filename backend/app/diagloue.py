@@ -1,10 +1,11 @@
+import os
 from openai import OpenAI
 from dotenv import load_dotenv, find_dotenv
 load_dotenv(find_dotenv())
 
 import argparse
 
-MAX_PROMPT_LENGTH = 10
+MAX_PROMPT_LENGTH = os.getenv("MAX_PROMPT_LENGTH")
 def main():
     
     parser = argparse.ArgumentParser()
@@ -13,7 +14,7 @@ def main():
     
     user_prompt = args.prompt
     
-    if validate_prompt(user_prompt):
+    if validate_prompt_lenght(user_prompt):
         
         dialogue = generate_dialogue(user_prompt=user_prompt)
         print(f"Dialogue - {dialogue}")
@@ -57,7 +58,7 @@ def generate_dialogue(user_prompt: str) -> str:
     
     return dialogue
 
-def validate_prompt(prompt: str) -> bool: 
+def validate_prompt_lenght(prompt: str) -> bool: 
     
     # Check if the length of prompt is more the max prompt length
     return len(prompt) <= MAX_PROMPT_LENGTH
