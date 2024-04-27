@@ -11,6 +11,8 @@ openai = "^1.23.6"
 python-dotenv = "^1.0.1"
 fastapi = "^0.110.2"
 uvicorn = "^0.29.0"
+awscli = "^1.32.93"
+aws-cdk-lib = "^2.139.0"
 
 
 [build-system]
