@@ -14,8 +14,7 @@ const LandingPage: React.FC = () => {
           Learning a new language can be challenging, especially when it comes to understanding
           context and natural conversation flow. Dialogia bridges this gap by providing learners
           with real-life dialogues that showcase how words and phrases are used in different
-          scenarios. Instead of just memorizing vocabulary, you'll gain a deeper understanding
-          of language nuances and cultural context.
+          scenarios.
         </p>
         
         <p className="coming-soon">Coming Soon</p>
