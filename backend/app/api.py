@@ -4,14 +4,14 @@ from fastapi import FastAPI
 from fastapi.exceptions import HTTPException
 
 from diagloue import generate_dialogue
-
+from mangum import Mangum
 from dotenv import load_dotenv, find_dotenv
 load_dotenv(find_dotenv())
 
 MAX_PROMPT_LENGTH = int(os.getenv("MAX_PROMPT_LENGTH"))
 
 app = FastAPI()
-
+handler = Mangum(app)
 
 @app.get("/get_dialogue")
 async def get_dialogue_api(prompt: str):
