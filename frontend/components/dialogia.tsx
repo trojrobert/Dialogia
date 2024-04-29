@@ -21,7 +21,7 @@ const LandingPage: React.FC = () => {
         <p className="coming-soon">Coming Soon</p>
       </section>
       <footer>
-        <p>© 2024 Dialogia. All rights reserved.</p>
+        <p>© John Robert.</p>
       </footer>
     </div>
   );
