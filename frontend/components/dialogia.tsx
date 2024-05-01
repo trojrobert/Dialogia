@@ -1,14 +1,40 @@
+"use client"; // This is a client component 👈🏽
+
 import React from 'react';
 import './landingPage.css';
 
 
 const LandingPage: React.FC = () => {
+  const ENDPOINT: string =
+    "https://pj5h74fp9f.execute-api.us-east-1.amazonaws.com/prod/get_dialogue";
+  
   const [prompt, setPrompt] = React.useState("");
+  const [dialogue, setDialogue] = React.useState("");
+  const [hasResult, setHasResult] = React.useState(false);
+
 
   const onCreateDialogue = () => {
     console.log("Creating Dialogue for: " + prompt);
-  }
+    fetch(`${ENDPOINT}?prompt=${prompt}`)
+      .then((res) => res.json())
+      .then(onResult);
   
+  };
+
+  const onResult = (data: any) => {
+    setDialogue(data);
+    setHasResult(true);
+  };
+  
+  let resultsElement = null;
+
+  if (hasResult) {
+    resultsElement = <div>
+      Dialogue:
+      <div>{dialogue}</div>
+    </div>
+  };
+
   return (
     <div className="landing-page">
       <header>
@@ -24,6 +50,8 @@ const LandingPage: React.FC = () => {
         
       </input>
       <button onClick={onCreateDialogue}>Create Dialogue</button>
+      {resultsElement}
+
       {/* <section className="main-content">
         <h2 className={'sub-header'}>Why Dialogia ?</h2>
         <p className={'description-text'}>
