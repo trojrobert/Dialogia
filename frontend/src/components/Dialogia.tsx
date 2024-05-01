@@ -63,7 +63,7 @@ const LandingPage: React.FC = () => {
    setPrompt('')
   };
 
-  const onPromptChange =(e)=>{
+  const onPromptChange =(e:any)=>{
       setError(false)
       let val = e.target.value
      setPrompt(val)
