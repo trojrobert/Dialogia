@@ -1,7 +1,7 @@
 "use client"; // This is a client component 👈🏽 This line is a comment, so I'll omit it here.
 import React, { useEffect, useState } from 'react';
 import DialogueForm from "./DialogueForm/DialogueForm";
-import './Styles/LandingPage.css';
+// import './Styles/LandingPage.css';
 
 const LandingPage: React.FC = () => {
   
