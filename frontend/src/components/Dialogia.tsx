@@ -12,7 +12,7 @@ const LandingPage: React.FC = () => {
   const [loading,setLoading] = useState(false)
 
 
-  const onCreateDialogue = (e) => {
+  const onCreateDialogue = (e:any) => {
     if(prompt) {
         const promptValue = prompt.trim()
         setError(false)
