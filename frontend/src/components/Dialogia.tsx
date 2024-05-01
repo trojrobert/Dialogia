@@ -8,66 +8,65 @@ const LandingPage: React.FC = () => {
   const [prompt, setPrompt] = useState("");
   const [dialogue, setDialogue] = useState("");
   const [error, setError] = useState(false);
-  const [showDialogueBox, setShowDialogueBox] = useState(false)
-  const [loading,setLoading] = useState(false)
+  const [showDialogueBox, setShowDialogueBox] = useState(false);
+  const [loading, setLoading] = useState(false);
 
+  const onCreateDialogue = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault(); // Prevent default form submission behavior
 
-  const onCreateDialogue = (e:any) => {
-    if(prompt) {
-        const promptValue = prompt.trim()
-        setError(false)
-        setLoading(true)
-        try{
-            setShowDialogueBox(true)
-            fetch(`${process.env.NEXT_PUBLIC_API_URL}/get_dialogue?prompt=${promptValue}`)
-                .then((res) => res.json())
-                .then(onResult);
-            setLoading(false)
-        }catch (err){
-            if(err){
-                setLoading(false)
-                setError(true)
-                setShowDialogueBox(false)
-            }
-        }
+    if (prompt.trim()) { // Check if prompt is not empty after trimming whitespace
+      setError(false);
+      setLoading(true);
 
+      fetch(`${process.env.NEXT_PUBLIC_API_URL}/get_dialogue?prompt=${encodeURIComponent(prompt.trim())}`)
+        .then((res) => {
+          if (!res.ok) { // Check if response is not OK
+            throw new Error('Network response was not ok');
+          }
+          return res.json();
+        })
+        .then(onResult)
+        .catch((err) => {
+          console.error('Error fetching data:', err);
+          setError(true);
+          setLoading(false);
+          setShowDialogueBox(false);
+        });
     }
-      e.preventDefault()
   };
 
+  useEffect(() => {
+    // Typewriter effect for displaying dialogue
+    if (dialogue) {
+      let index = 0;
+      const typewriter = document.getElementById('dialogue-box');
 
-
-    useEffect(()=>{
-        if(dialogue){
-            let index = 0;
-            const typewriter = document.getElementById('dialogue-box');
-            const type =()=>{
-                if (index < dialogue.length) {
-                    typewriter?.innerHTML = dialogue.slice(0, index) + '<span class="blinking-cursor">|</span>';
-                    index++;
-                    setTimeout(type, 2000);
-                } else {
-                    typewriter?.innerHTML = dialogue.slice(0, index) + '<span class="blinking-cursor">|</span>';
-                }
-            }
-            type()
-        }
-    },[dialogue])
-
+      const type = () => {
+          if (index < dialogue.length) {
+              typewriter?.innerHTML = dialogue.slice(0, index) + '<span class="blinking-cursor">|</span>';
+              index++;
+              setTimeout(type, 50); // Decreased timeout for faster typing effect
+          } else {
+              typewriter?.innerHTML = dialogue.slice(0, index) + '<span class="blinking-cursor">|</span>';
+          }
+      }
+          type();
+    }},[dialogue])
 
 
 
 
-  const onResult = (data: any) => {
+  const onResult = (data: string) => {
     setDialogue(data);
-   setPrompt('')
+    setPrompt('');
+    setLoading(false);
+    setShowDialogueBox(true);
   };
 
-  const onPromptChange =(e:any)=>{
-      setError(false)
-      let val = e.target.value
-     setPrompt(val)
-  }
+  const onPromptChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setError(false);
+    setPrompt(e.target.value);
+  };
 
   return (
     <div className="landing-page">
