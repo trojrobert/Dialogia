@@ -20,7 +20,7 @@ const LandingPage: React.FC = () => {
         <p className="coming-soon">Coming Soon</p>
       </section>
       <footer>
-        <p>© John Robert.</p>
+        <p>© John Robert</p>
       </footer>
     </div>
   );
