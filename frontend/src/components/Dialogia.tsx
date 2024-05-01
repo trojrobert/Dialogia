@@ -43,11 +43,11 @@ const LandingPage: React.FC = () => {
             const typewriter = document.getElementById('dialogue-box');
             const type =()=>{
                 if (index < dialogue.length) {
-                    typewriter.innerHTML = dialogue.slice(0, index) + '<span class="blinking-cursor">|</span>';
+                    typewriter?.innerHTML = dialogue.slice(0, index) + '<span class="blinking-cursor">|</span>';
                     index++;
                     setTimeout(type, 2000);
                 } else {
-                    typewriter.innerHTML = dialogue.slice(0, index) + '<span class="blinking-cursor">|</span>';
+                    typewriter?.innerHTML = dialogue.slice(0, index) + '<span class="blinking-cursor">|</span>';
                 }
             }
             type()
