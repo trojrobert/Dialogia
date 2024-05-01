@@ -1,5 +1,6 @@
-import Image from "next/image";
-import LandingPage from "@/components/dialogia";
+import LandingPage from "../src/components/dialogia";
+import React from "react";
+import './index.css'
 
 export default function Home() {
   return (
@@ -14,7 +15,7 @@ export default function Home() {
           content="Learn language with dialogue and context"
         />
       </head>
-      <LandingPage />
+      <LandingPage/>
 
 
       {/* <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
@@ -130,6 +131,9 @@ export default function Home() {
           </p>
         </a>
       </div> */}
+        <footer className={'footer'}>
+            <p className={'copyright'}>© John Robert</p>
+        </footer>
     </main>
   );
 }

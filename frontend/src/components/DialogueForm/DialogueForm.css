@@ -1,0 +1,47 @@
+.form-container{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+#dialogueForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+}
+
+.dialog-input{
+    background: white;
+    height: 50px;
+    color: #010912;
+    font-size: 20px;
+    padding: 8px ;
+    border-radius: 5px;
+    width: 100%;
+    outline: none;
+}
+.dialog-input ::placeholder{
+    color: #010912;
+}
+.submit-button{
+    height: 50px;
+    font-size: 20px;
+    font-weight: bold;
+    background: white;
+    color: #010912;
+    outline: #010912;
+    width: 30%;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+@media (max-width: 750px) {
+    .submit-button{
+        width: 60%;
+        font-size: 16px;
+    }
+
+}
