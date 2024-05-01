@@ -1,7 +1,7 @@
-"use client"; // This is a client component 👈🏽 This line is a comment, so I'll omit it here.
-import React, { useEffect, useState } from 'react';
+"use client"; // This is a client component 👈🏽
+import React, {useEffect, useState} from 'react';
 import DialogueForm from "./DialogueForm/DialogueForm";
-// import './Styles/LandingPage.css';
+import './Styles/LandingPage.css';
 
 const LandingPage: React.FC = () => {
   
@@ -42,18 +42,19 @@ const LandingPage: React.FC = () => {
       const typewriter = document.getElementById('dialogue-box');
 
       const type = () => {
-        if (index < dialogue.length) {
-          typewriter.innerHTML = dialogue.slice(0, index) + '<span class="blinking-cursor">|</span>';
-          index++;
-          setTimeout(type, 50); // Decreased timeout for faster typing effect
-        } else {
-          typewriter.innerHTML = dialogue.slice(0, index) + '<span class="blinking-cursor">|</span>';
-        }
-      };
+          if (index < dialogue.length) {
+              typewriter?.innerHTML = dialogue.slice(0, index) + '<span class="blinking-cursor">|</span>';
+              index++;
+              setTimeout(type, 50); // Decreased timeout for faster typing effect
+          } else {
+              typewriter?.innerHTML = dialogue.slice(0, index) + '<span class="blinking-cursor">|</span>';
+          }
+      }
+          type();
+    }},[dialogue])
 
-      type();
-    }
-  }, [dialogue]);
+
+
 
   const onResult = (data: string) => {
     setDialogue(data);
@@ -70,19 +71,33 @@ const LandingPage: React.FC = () => {
   return (
     <div className="landing-page">
       <header>
-        <h1 className="header-text">Dialogia AI</h1>
+        <h1 className={'header-text'}>Dialogia AI</h1>
         <p>Learn languages through engaging dialogues and context</p>
       </header>
 
-      <DialogueForm onSubmit={onCreateDialogue} onPromptChange={onPromptChange} prompt={prompt} />
-      {loading && <p className="loading-text">Generating ....</p>}
-      {showDialogueBox && <div id="dialogue-box"></div>}
+        <DialogueForm onSubmit={onCreateDialogue} onPromptChange={onPromptChange} prompt={prompt} />
+        {loading && <p className={'loading-text'}>Generating ....</p>}
+        {
+            showDialogueBox &&  <div id={'dialogue-box'}></div>
+        }
 
-      {error && (
-        <div className="error-description">
-          <p>Please try again later</p>
-        </div>
-      )}
+        {error && (
+            <div className={'error-description'}>
+                <p>Please try again later</p>
+            </div>
+        )}
+
+      {/* <section className="main-content">
+        <h2 className={'sub-header'}>Why Dialogia ?</h2>
+        <p className={'description-text'}>
+          Learning a new language can be challenging, especially when it comes to understanding
+          context and natural conversation flow. Dialogia bridges this gap by providing learners
+          with real-life dialogues that showcase how words and phrases are used in different
+          scenarios.
+        </p>
+        
+        <p className="coming-soon">Coming Soon</p>
+      </section> */}
     </div>
   );
 };
