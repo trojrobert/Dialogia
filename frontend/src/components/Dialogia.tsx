@@ -1,9 +1,7 @@
 "use client"; // This is a client component 👈🏽
-
 import React, {useEffect, useState} from 'react';
-// import "./LandingPage.css";
 import DialogueForm from "./DialogueForm/DialogueForm";
-
+import './Styles/LandingPage.css';
 
 const LandingPage: React.FC = () => {
   
@@ -14,7 +12,7 @@ const LandingPage: React.FC = () => {
   const [loading,setLoading] = useState(false)
 
 
-  const onCreateDialogue = (e) => {
+  const onCreateDialogue = (e:any) => {
     if(prompt) {
         const promptValue = prompt.trim()
         setError(false)
@@ -45,11 +43,11 @@ const LandingPage: React.FC = () => {
             const typewriter = document.getElementById('dialogue-box');
             const type =()=>{
                 if (index < dialogue.length) {
-                    typewriter.innerHTML = dialogue.slice(0, index) + '<span class="blinking-cursor">|</span>';
+                    typewriter?.innerHTML = dialogue.slice(0, index) + '<span class="blinking-cursor">|</span>';
                     index++;
                     setTimeout(type, 2000);
                 } else {
-                    typewriter.innerHTML = dialogue.slice(0, index) + '<span class="blinking-cursor">|</span>';
+                    typewriter?.innerHTML = dialogue.slice(0, index) + '<span class="blinking-cursor">|</span>';
                 }
             }
             type()
