@@ -5,6 +5,8 @@ from fastapi.exceptions import HTTPException
 
 from diagloue import generate_dialogue
 from mangum import Mangum
+from fastapi.middleware.cors import CORSMiddleware
+
 from dotenv import load_dotenv, find_dotenv
 load_dotenv(find_dotenv())
 
@@ -12,6 +14,14 @@ MAX_PROMPT_LENGTH = int(os.getenv("MAX_PROMPT_LENGTH"))
 
 app = FastAPI()
 handler = Mangum(app)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.get("/get_dialogue")
 async def get_dialogue_api(prompt: str):

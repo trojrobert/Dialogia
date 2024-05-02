@@ -5,10 +5,13 @@ body{
 }
 
 .landing-page {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   }
   
   header {
@@ -42,6 +45,10 @@ body{
     text-align: left;
     margin-left: 20px;
   }
+
+  input{
+    background-color: #010912;
+  }
   
   .cta-button {
     padding: 10px 20px;
@@ -69,6 +76,40 @@ body{
   .sub-header{
     color: white;
   }
+  .error-description{
+    width: 60%;
+    border-radius: 5px;
+    font-size: 8px;
+    background: #ff5555;
+    margin-top: 40px;
+  }
+
+  #dialogue-box{
+    background: whitesmoke;
+    height:200px;
+    width:100%;
+    color: #010912;
+    font-size: 20px;
+    margin-top: 50px;
+  }
+
+.blinking-cursor {
+  margin-left: 5px;
+  background-color: #fff;
+  animation: blink 1s infinite;
+}
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  50.1%, 100% {
+    opacity: 0;
+  }
+}
+.loading-text{
+  font-size: 16px;
+  margin: 42px 0 16px 0;
+}
 
 @media (max-width: 750px) {
   .landing-page{
@@ -93,6 +134,9 @@ body{
   }
   .coming-soon{
     font-size: 40px;
+  }
+  .error-description{
+    width: 70%
   }
 }
 
