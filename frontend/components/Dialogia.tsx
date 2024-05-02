@@ -39,16 +39,18 @@ const LandingPage: React.FC = () => {
     // Typewriter effect for displaying dialogue
     if (dialogue) {
       let index = 0;
-      const typewriter = document.getElementById('dialogue-box');
+      let typewriter = document.getElementById('dialogue-box');
 
       const type = () => {
+        if (typewriter) {
           if (index < dialogue.length) {
-              typewriter?.innerHTML = dialogue.slice(0, index) + '<span class="blinking-cursor">|</span>';
-              index++;
-              setTimeout(type, 50); // Decreased timeout for faster typing effect
+            typewriter.innerHTML = dialogue.slice(0, index) + '<span class="blinking-cursor">|</span>';
+            index++;
+            setTimeout(type, 50); // Decreased timeout for faster typing effect
           } else {
-              typewriter?.innerHTML = dialogue.slice(0, index) + '<span class="blinking-cursor">|</span>';
+            typewriter.innerHTML = dialogue.slice(0, index) + '<span class="blinking-cursor">|</span>';
           }
+        }
       }
           type();
     }},[dialogue])

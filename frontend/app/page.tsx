@@ -1,4 +1,4 @@
-import LandingPage from "@/src/components/Dialogia";
+import LandingPage from "../components/Dialogia";
 import React from "react";
 import './index.css'
 

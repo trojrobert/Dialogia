@@ -1,13 +1,11 @@
-import React from "react";
+import React, { ChangeEvent } from "react";
 import './DialogueForm.css'
 
 type FormProps= {
-    onSubmit : () =>void;
-    onPromptChange : ()=>void
+    onSubmit : (e:React.FormEvent<HTMLFormElement>) =>void;
+    onPromptChange : (e:ChangeEvent<HTMLInputElement>)=>void
     prompt: string
 }
-
-
 export default function DialogueForm ({onSubmit,onPromptChange,prompt}:FormProps){
     return (
         <div className={'form-container'}>
