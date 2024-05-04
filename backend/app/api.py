@@ -24,9 +24,9 @@ app.add_middleware(
 )
 
 @app.get("/get_dialogue")
-async def get_dialogue_api(prompt: str, tranlating_language: str):
+async def get_dialogue_api(prompt: str, translating_language: str):
     validate_prompt_length(prompt=prompt)
-    dialogue = generate_dialogue(prompt=prompt, tranlating_language=tranlating_language)
+    dialogue = generate_dialogue(prompt=prompt, translating_language=translating_language)
     return {dialogue}
 
 def validate_prompt_length(prompt: str) -> None: 
