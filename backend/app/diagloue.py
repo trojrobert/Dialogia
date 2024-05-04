@@ -24,11 +24,11 @@ def main():
     pass
 
 def generate_dialogue(user_prompt: str,
-                      tranlating_language: str) -> str:
+                      translating_language: str) -> str:
     client = OpenAI()
 
     # print(f"User prompt - {user_prompt}")
-    content = f"Create a diagloue that to explain {user_prompt}. Then translate the diagloue to {tranlating_language}"
+    content = f"Create a diagloue that to explain {user_prompt}. Then translate the diagloue to {translating_language}"
     print(f"System prompt - {content}")
     
     completion = client.chat.completions.create(
