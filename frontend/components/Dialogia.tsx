@@ -2,7 +2,11 @@
 import React, {useEffect, useState} from 'react';
 import DialogueForm from "./DialogueForm/DialogueForm";
 import './LandingPage.css';
+import * as dotenv from 'dotenv';
 
+
+// Load environment variable from .env file
+dotenv.config();
 const LandingPage: React.FC = () => {
   
   const [prompt, setPrompt] = useState("");
