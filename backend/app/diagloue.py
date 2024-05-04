@@ -1,6 +1,8 @@
 import os
+
+from dotenv import find_dotenv, load_dotenv
 from openai import OpenAI
-from dotenv import load_dotenv, find_dotenv
+
 load_dotenv(find_dotenv())
 
 import argparse
@@ -25,18 +27,18 @@ def main():
 
 def generate_dialogue(user_prompt: str) -> str:
     client = OpenAI()
-
-    print(f"User prompt - {user_prompt}")
-    content = f"Translate the {user_prompt} to German and create a sentence using the translated word"
+    # print(f"User prompt - {user_prompt}")
+    content = f"Create a diagloue that to explain {user_prompt} in german"
     print(f"System prompt - {content}")
     
     completion = client.chat.completions.create(
     model="gpt-3.5-turbo",
     messages=[
-        {"role": "system", "content": "You are a language teacher, you translate words from english to german can create a sentence"},
+        {"role": "system", "content": """You are a language teacher, you want to example a word using a real life conversion where 
+         the world was used. Translate the dialogue to german. The output should be the  translated dialogue in german"""},
         {"role": "user", "content": content}
     ], 
-    max_tokens=20,
+    max_tokens=50,
     )
 
     dialogue = completion.choices[0].message.content
