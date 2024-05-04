@@ -34,8 +34,7 @@ def generate_dialogue(user_prompt: str) -> str:
     completion = client.chat.completions.create(
     model="gpt-3.5-turbo",
     messages=[
-        {"role": "system", "content": """You are a language teacher, you want to example a word using a real life conversion where 
-         the world was used. Translate the dialogue to german. The output should be the  translated dialogue in german"""},
+        {"role": "system", "content": """Translate english to german by creating a dialogue. The output should be the  translated dialogue in german"""},
         {"role": "user", "content": content}
     ], 
     max_tokens=50,
