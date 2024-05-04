@@ -22,7 +22,7 @@ const LandingPage: React.FC = () => {
       setError(false);
       setLoading(true);
 
-      fetch(`${process.env.NEXT_PUBLIC_API_URL}/get_dialogue?prompt=${encodeURIComponent(prompt.trim())}`)
+      fetch(`https://pj5h74fp9f.execute-api.us-east-1.amazonaws.com/prod/get_dialogue?prompt=${encodeURIComponent(prompt.trim())}`)
         .then((res) => {
           if (!res.ok) { // Check if response is not OK
             throw new Error('Network response was not ok');
