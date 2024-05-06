@@ -7,6 +7,8 @@ from diagloue import generate_dialogue
 from mangum import Mangum
 from fastapi.middleware.cors import CORSMiddleware
 
+from pydantic import BaseModel
+
 from dotenv import load_dotenv, find_dotenv
 load_dotenv(find_dotenv())
 
@@ -23,8 +25,15 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+class Request(BaseModel):
+    prompt: str
+    translate_to_lang: str
+
 @app.get("/get_dialogue")
-async def get_dialogue_api(prompt: str):
+async def get_dialogue_api(request: Request):
+    prompt = request.prompt
+    translate_to_lang = request.translate_to_lang
+    
     validate_prompt_length(prompt=prompt)
     dialogue = generate_dialogue(prompt)
     return {dialogue}
