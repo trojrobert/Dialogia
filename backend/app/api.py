@@ -1,6 +1,6 @@
 import os
 from typing import Union
-from fastapi import FastAPI
+from fastapi import FastAPI, APIRouter
 from fastapi.exceptions import HTTPException
 
 from diagloue import generate_dialogue
@@ -15,6 +15,8 @@ load_dotenv(find_dotenv())
 MAX_PROMPT_LENGTH = int(os.getenv("MAX_PROMPT_LENGTH"))
 
 app = FastAPI()
+router = APIRouter()
+
 handler = Mangum(app)
 
 app.add_middleware(
@@ -29,7 +31,7 @@ class Request(BaseModel):
     prompt: str
     translate_to_lang: str
 
-@app.get("/get_dialogue")
+@router.get("/get_dialogue")
 async def get_dialogue_api(request: Request):
     prompt = request.prompt
     translate_to_lang = request.translate_to_lang
