@@ -1,6 +1,7 @@
 import LandingPage from "../components/Dialogia";
 import React from "react";
 import './index.css'
+import Translator from "../components/Translator/Translator";
 
 export default function Home() {
   return (

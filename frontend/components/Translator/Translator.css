@@ -1,0 +1,59 @@
+.translator-container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 80%;
+}
+
+.translator-select{
+    display: flex;
+    flex-direction: column;
+}
+
+.translator-container-item{
+    margin-bottom: 50px;
+}
+.translator-container-dropdown{
+
+}
+
+select{
+    height: 40px;
+    border-radius: 4px;
+    color: black;
+}
+.translator-box{
+    height: 200px;
+    width: 100%;
+    border-radius: 8px;
+    margin-top: 8px;
+}
+
+.button-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+textarea{
+    background: white;
+    height: 200px;
+    width: 100%;
+    border-radius: 8px;
+    margin-top: 8px;
+    color: #010912;
+}
+
+
+@media (min-width: 750px) {
+.translator-select{
+    flex-direction: row;
+    justify-content: space-between;
+}
+    .translator-container{
+        width: 100%
+    }
+    .translator-container-item{
+        width: 45%;
+    }
+}

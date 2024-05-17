@@ -1,8 +1,9 @@
 "use client"; // This is a client component 👈🏽
 import React, {useEffect, useState} from 'react';
-import DialogueForm from "./DialogueForm/DialogueForm";
+// import DialogueForm from "./DialogueForm/DialogueForm";
 import './LandingPage.css';
 import * as dotenv from 'dotenv';
+import Translator from "./Translator/Translator";
 
 
 // Load environment variable from .env file
@@ -81,7 +82,8 @@ const LandingPage: React.FC = () => {
         <p>Learn languages through engaging dialogues and context</p>
       </header>
 
-        <DialogueForm onSubmit={onCreateDialogue} onPromptChange={onPromptChange} prompt={prompt} />
+        {/*<DialogueForm onSubmit={onCreateDialogue} onPromptChange={onPromptChange} prompt={prompt} />*/}
+      <Translator/>
         {loading && <p className={'loading-text'}>Generating ....</p>}
         {
             showDialogueBox &&  <div id={'dialogue-box'}></div>
