@@ -4,6 +4,12 @@ import './Translator.css'
 export default function Translator(){
     return (
         <div className={'translator-container'}>
+            <div className={'translator-box'}>
+                <input  type="text" id="user-prompt" name="user-input"/>
+            </div>
+            <div className={'button-container'}>
+                <button className={'submit-button'} type='submit'>Create Dialogue</button>
+            </div>
             <div className={'translator-select'}>
                 <div className={'translator-container-item'}>
                     <div className={'translator-container-dropdown'}>
@@ -27,9 +33,6 @@ export default function Translator(){
                         <textarea id="lang-text" name="lang-text"/>
                     </div>
                 </div>
-            </div>
-            <div className={'button-container'}>
-                <button className={'submit-button'} type='submit'>Create Dialogue</button>
             </div>
 
 
