@@ -23,10 +23,11 @@ select{
     color: black;
 }
 .translator-box{
+    margin-top: 10px;
     height: 200px;
     width: 100%;
     border-radius: 8px;
-    margin-top: 8px;
+    margin-top: 10px;
 }
 
 .button-container{
@@ -39,8 +40,8 @@ textarea{
     background: white;
     height: 200px;
     width: 100%;
-    border-radius: 8px;
-    margin-top: 8px;
+    border-radius: 10px;
+    margin-top: 10px;
     color: #010912;
 }
 
@@ -48,7 +49,7 @@ input{
     background: white;
     justify-content: center;
     width: 100%;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
 }
 
 
