@@ -46,6 +46,8 @@ textarea{
 
 input{
     background: white;
+    justify-content: center;
+    width: 100%;
 }
 
 

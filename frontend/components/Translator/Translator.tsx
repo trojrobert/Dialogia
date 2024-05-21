@@ -4,7 +4,7 @@ import './Translator.css'
 export default function Translator(){
     return (
         <div className={'translator-container'}>
-            <div className={'translator-box'}>
+            <div>
                 <input  type="text" id="user-prompt" name="user-input"/>
             </div>
             <div className={'button-container'}>
