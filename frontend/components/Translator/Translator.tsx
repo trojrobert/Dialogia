@@ -18,9 +18,9 @@ export default function Translator(){
                             <option value="english">English</option>
                         </select>
                     </div>
-                    <div className={'translator-box'}>
+                    {/* <div className={'translator-box'}>
                         <textarea id="origin-lang" name="origin-lang" />
-                    </div>
+                    </div> */}
                 </div>
                 <div className={'translator-container-item'}>
                     <div className={'translator-container-dropdown'}>
@@ -29,9 +29,9 @@ export default function Translator(){
                             <option value="german">German</option>
                         </select>
                     </div>
-                    <div className={'translator-box'}>
+                    {/* <div className={'translator-box'}>
                         <textarea id="lang-text" name="lang-text"/>
-                    </div>
+                    </div> */}
                 </div>
             </div>
 
