@@ -23,7 +23,6 @@ export default function Translator() {
   };
     return (
 <main className={styles.main}>
-      <h2 className={styles.subtitle}>Create a Dialogue</h2>
       <div className={styles.inputGroup}>
         <input type="text" className={styles.input} placeholder="Type a word or topic" />
         <select value={inputLanguage} onChange={handleInputLanguageChange} className={styles.select}>
