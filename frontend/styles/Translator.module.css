@@ -2,12 +2,6 @@
   text-align: center;
 }
 
-.subtitle {
-  font-size: 2rem;
-  margin-bottom: 2rem;
-  color: #ffffff;
-}
-
 .inputGroup {
   display: flex;
   align-items: center;
