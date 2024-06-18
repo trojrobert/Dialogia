@@ -3,7 +3,7 @@ import React, {useEffect, useState} from 'react';
 // import DialogueForm from "./DialogueForm/DialogueForm";
 import './LandingPage.css';
 import * as dotenv from 'dotenv';
-import Translator from "./Translator/Translator";
+import Translator from "./Translator";
 
 
 // Load environment variable from .env file

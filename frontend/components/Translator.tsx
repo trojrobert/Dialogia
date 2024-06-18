@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from 'react';
-import './Translator.css'
+import styles from '../styles/Translator.module.css';
 
 const languages = [
     { code: 'en', name: 'English', flag: '🇺🇸' },
@@ -21,17 +21,18 @@ export default function Translator() {
     setOutputLanguage(e.target.value);
   };
     return (
-    <main className={"main"}>
-      <div className={"inputGroup"}>
-        <input type="text" className={"input"} placeholder="Type a word or topic" />
-        <select value={inputLanguage} onChange={handleInputLanguageChange} className={"select"}>
+      <main className={styles.main}>
+      <h2 className={styles.subtitle}>Create a Dialogue</h2>
+      <div className={styles.inputGroup}>
+        <input type="text" className={styles.input} placeholder="Type a word or topic" />
+        <select value={inputLanguage} onChange={handleInputLanguageChange} className={styles.select}>
           {languages.map(lang => (
             <option key={lang.code} value={lang.code}>
               {lang.flag} {lang.name}
             </option>
           ))}
         </select>
-        <select value={outputLanguage} onChange={handleOutputLanguageChange} className={"select"}>
+        <select value={outputLanguage} onChange={handleOutputLanguageChange} className={styles.select}>
           {languages.map(lang => (
             <option key={lang.code} value={lang.code}>
               {lang.flag} {lang.name}
@@ -39,7 +40,8 @@ export default function Translator() {
           ))}
         </select>
       </div>
-      <button className={"button"}>Create Dialogue</button>
+      <button className={styles.button}>Create Dialogue</button>
     </main>
-    )
-}
+
+  );
+};

@@ -1,0 +1,15 @@
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #1b1b1d;
+  padding: 0 2rem;
+}
+
+.footer {
+  margin-top: 2rem;
+  color: #999999;
+}
