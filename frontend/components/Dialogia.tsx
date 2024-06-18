@@ -8,13 +8,6 @@ import Translator from "./Translator/Translator";
 
 // Load environment variable from .env file
 dotenv.config();
-
-const languages = [
-  { code: 'en', name: 'English' },
-  { code: 'de', name: 'German' },
-  { code: 'fr', name: 'French' },
-  // Add more languages as needed
-];
 const LandingPage: React.FC = () => {
   
   const [prompt, setPrompt] = useState("");
@@ -22,10 +15,6 @@ const LandingPage: React.FC = () => {
   const [error, setError] = useState(false);
   const [showDialogueBox, setShowDialogueBox] = useState(false);
   const [loading, setLoading] = useState(false);
-
-  const [inputWord, setInputWord] = useState('');
-  const [inputLanguage, setInputLanguage] = useState('en');
-  const [outputLanguage, setOutputLanguage] = useState('es');
 
   const onCreateDialogue = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault(); // Prevent default form submission behavior
@@ -86,66 +75,12 @@ const LandingPage: React.FC = () => {
     setPrompt(e.target.value);
   };
 
-  const handleInputWordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setInputWord(e.target.value);
-  };
-
-  const handleInputLanguageChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setInputLanguage(e.target.value);
-  };
-
-  const handleOutputLanguageChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setOutputLanguage(e.target.value);
-  };
-
   return (
     <div className="landing-page">
       <header>
         <h1 className={'header-text'}>Dialogia AI</h1>
         <p>Learn languages through engaging dialogues and context</p>
       </header>
-      <main>
-        <div style={{ marginBottom: '20px' }}>
-          <label htmlFor="input-word">Word:</label>
-          <input
-            type="text"
-            id="input-word"
-            value={inputWord}
-            onChange={handleInputWordChange}
-            style={{ marginLeft: '10px', padding: '5px' }}
-          />
-        </div>
-        <div style={{ marginBottom: '20px' }}>
-          <label htmlFor="input-language">Input Language:</label>
-          <select
-            id="input-language"
-            value={inputLanguage}
-            onChange={handleInputLanguageChange}
-            style={{ marginLeft: '10px', padding: '5px' }}
-          >
-            {languages.map((lang) => (
-              <option key={lang.code} value={lang.code}>
-                {lang.name}
-              </option>
-            ))}
-          </select>
-        </div>
-        <div style={{ marginBottom: '20px' }}>
-          <label htmlFor="output-language">Output Language:</label>
-          <select
-            id="output-language"
-            value={outputLanguage}
-            onChange={handleOutputLanguageChange}
-            style={{ marginLeft: '10px', padding: '5px' }}
-          >
-            {languages.map((lang) => (
-              <option key={lang.code} value={lang.code}>
-                {lang.name}
-              </option>
-            ))}
-          </select>
-        </div>
-      </main>
 
         {/*<DialogueForm onSubmit={onCreateDialogue} onPromptChange={onPromptChange} prompt={prompt} />*/}
       
