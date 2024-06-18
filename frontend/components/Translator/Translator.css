@@ -5,6 +5,11 @@
     width: 80%;
 }
 
+.translator-row {
+    display: flex;
+    align-items: center;
+}
+
 .translator-select{
     display: flex;
     flex-direction: column;
