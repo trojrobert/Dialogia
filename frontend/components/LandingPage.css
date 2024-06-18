@@ -1,5 +1,5 @@
 
-
+Copy code
 body {
   margin: 0;
   padding: 0;
@@ -7,138 +7,22 @@ body {
   background-color: #1b1b1d;
   color: #ffffff;
 }
+
 .header {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-bottom: 2rem;
 }
+
 .title {
   font-size: 4rem;
   color: #00ffa2;
   text-align: center;
 }
+
 .description {
   color: #999999;
   font-size: 1.2rem;
   text-align: center;
 }
-  
-
-/* 
-  p {
-    color: #fbf8f8;
-    line-height: 1.6;
-    font-size:1.5rem;
-  }
-  
-  .main-content {
-    margin-bottom: 40px;
-  }
-  
-  h2 {
-    font-size: 3.0rem;
-    color: #ffffff;
-    margin-bottom: 10px;
-  }
-  
-  ul {
-    list-style-type: disc;
-    text-align: left;
-    margin-left: 20px;
-  }
-
-  input{
-    background-color: #010912;
-  }
-  
-  .cta-button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .cta-button:hover {
-    background-color: #0056b3;
-  }
-  
-  footer {
-    margin-top: 10px;
-  }
-  
-  .coming-soon {
-    font-size:60px;
-    color: #0b63f1;
-    margin-top: 40px
-  }
-  .sub-header{
-    color: white;
-  }
-  .error-description{
-    width: 60%;
-    border-radius: 5px;
-    font-size: 8px;
-    background: #ff5555;
-    margin-top: 40px;
-  }
-
-  #dialogue-box{
-    background: whitesmoke;
-    height:200px;
-    width:100%;
-    color: #010912;
-    font-size: 20px;
-    margin-top: 50px;
-  }
-
-.blinking-cursor {
-  margin-left: 5px;
-  background-color: #fff;
-  animation: blink 1s infinite;
-}
-@keyframes blink {
-  0%, 50% {
-    opacity: 1;
-  }
-  50.1%, 100% {
-    opacity: 0;
-  }
-}
-.loading-text{
-  font-size: 16px;
-  margin: 42px 0 16px 0;
-}
-
-@media (max-width: 750px) {
-  .landing-page{
-    padding: 24px 8px 24px 8px
-  }
-  .main-content{
-    padding: 16px 10px 16px 10px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  .description-text {
-    font-size: 14px;
-  }
-  .header-text{
-    font-size: 55px;
-  }
-  .sub-header{
-    font-size: 25px;
-    font-weight: bold;
-  }
-  .coming-soon{
-    font-size: 40px;
-  }
-  .error-description{
-    width: 70%
-  }
-} */
-
