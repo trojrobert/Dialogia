@@ -21,8 +21,7 @@ export default function Translator() {
     setOutputLanguage(e.target.value);
   };
     return (
-        <main className={"main"}>
-      <h2 className={"subtitle"}>Create a Dialogue</h2>
+    <main className={"main"}>
       <div className={"inputGroup"}>
         <input type="text" className={"input"} placeholder="Type a word or topic" />
         <select value={inputLanguage} onChange={handleInputLanguageChange} className={"select"}>
@@ -39,8 +38,8 @@ export default function Translator() {
             </option>
           ))}
         </select>
-        <button className={"button"}>Create Dialogue</button>
       </div>
+      <button className={"button"}>Create Dialogue</button>
     </main>
     )
 }
