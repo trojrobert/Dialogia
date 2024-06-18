@@ -2,7 +2,8 @@
     display: flex;
     flex-direction: column;
     align-items: top;
-    margin-bottom: 2rem;
+    padding: 20px;
+    margin-bottom: 10rem;
   }
   
   .title {
