@@ -22,7 +22,8 @@ export default function Translator() {
     setOutputLanguage(e.target.value);
   };
     return (
-      <main className={styles.main}>
+<main className={styles.main}>
+      <h2 className={styles.subtitle}>Create a Dialogue</h2>
       <div className={styles.inputGroup}>
         <input type="text" className={styles.input} placeholder="Type a word or topic" />
         <select value={inputLanguage} onChange={handleInputLanguageChange} className={styles.select}>
@@ -32,6 +33,7 @@ export default function Translator() {
             </option>
           ))}
         </select>
+        <div className={styles.arrow}>→</div>
         <select value={outputLanguage} onChange={handleOutputLanguageChange} className={styles.select}>
           {languages.map(lang => (
             <option key={lang.code} value={lang.code}>
@@ -42,6 +44,5 @@ export default function Translator() {
       </div>
       <button className={styles.button}>Create Dialogue</button>
     </main>
-
   );
 };

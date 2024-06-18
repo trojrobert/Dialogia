@@ -3,7 +3,7 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between; /* Distribute space between header, main, and footer */
   align-items: center;
   background-color: #1b1b1d;
   padding: 0 2rem;
@@ -12,5 +12,5 @@
 .footer {
   margin-top: 2rem;
   color: #999999;
-  height: 50px;
+  font-family: 'Poppins', sans-serif;
 }
