@@ -3,13 +3,14 @@
     flex-direction: column;
     align-items: top;
     padding: 20px;
-    margin-bottom: 10rem;
+    margin-bottom: 25rem;
   }
   
   .title {
     font-size: 4rem;
     color: #00ffa2;
     text-align: center;
+    font-weight: bold;
   }
   
   .description {
