@@ -4,7 +4,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #1b1b1d;
+    background-color: #101011;
     padding: 0 2rem;
   }
   
@@ -53,8 +53,8 @@
 }
 
 .button {
-  padding: 0.5rem 1rem;
-  font-size: 1.5rem;
+  padding: 1.5rem 2rem;
+  font-size: 0.5rem;
   background-color: #00ffa2;
   border: none;
   border-radius: 5px;
