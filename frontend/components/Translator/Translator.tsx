@@ -22,28 +22,29 @@ export default function Translator() {
   };
     return (
         <div className={"container"}>
-            <main className={"main"}>
-                <div className={"inputGroup"}>
-                    <input type="text" className={"input"} placeholder="type a word or topic" />
-                    <div className={"selectGroup"}>
-                        <select value={inputLanguage} onChange={handleInputLanguageChange} className={"select"}>
-                            {languages.map(lang => (
-                            <option key={lang.code} value={lang.code}>
-                                {lang.flag} {lang.name}
-                            </option>
-                            ))}
-                        </select>
-                        <select value={outputLanguage} onChange={handleOutputLanguageChange} className={"select"}>
-                            {languages.map(lang => (
-                            <option key={lang.code} value={lang.code}>
-                                {lang.flag} {lang.name}
-                            </option>
-                            ))}
-                        </select>
-                    </div>
-                </div>
-                <button className={"button"}>Create Dialogue</button>
-            </main>
+                  <main className={"main"}>
+        <h2 className={"subtitle"}>Create a Dialogue</h2>
+        <div className={"inputGroup"}>
+          <input type="text" className={"input"} placeholder="Type a word or topic" />
+          <div className={"selectGroup"}>
+            <select value={inputLanguage} onChange={handleInputLanguageChange} className={"select"}>
+              {languages.map(lang => (
+                <option key={lang.code} value={lang.code}>
+                  {lang.flag} {lang.name}
+                </option>
+              ))}
+            </select>
+            <select value={outputLanguage} onChange={handleOutputLanguageChange} className={"select"}>
+              {languages.map(lang => (
+                <option key={lang.code} value={lang.code}>
+                  {lang.flag} {lang.name}
+                </option>
+              ))}
+            </select>
+            <button className={"button"}>➔</button>
+          </div>
+        </div>
+      </main>
         </div>
     )
 }
