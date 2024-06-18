@@ -1,0 +1,42 @@
+.main {
+  text-align: center;
+}
+
+.subtitle {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #ffffff;
+}
+
+.inputGroup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.input {
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border-radius: 25px;
+  border: none;
+  width: 300px;
+}
+
+.select {
+  padding: 0.75rem;
+  margin: 0 0.5rem;
+  border-radius: 25px;
+  border: none;
+  font-size: 1rem;
+}
+
+.button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  background-color: #00ffa2;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  color: #1b1b1d;
+  margin-top: 1.5rem;
+}
