@@ -78,7 +78,7 @@ const LandingPage: React.FC = () => {
   return (
     <div className="landing-page">
       <header>
-        <h1 className={'header-text'}>Dialogia AI</h1>
+        <h1 className={'title'}>Dialogia AI</h1>
         <p>Learn languages through engaging dialogues and context</p>
       </header>
 

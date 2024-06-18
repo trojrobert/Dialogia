@@ -1,39 +1,49 @@
 import React from "react";
+import { useState } from 'react';
 import './Translator.css'
 
-export default function Translator(){
+const languages = [
+    { code: 'en', name: 'English', flag: '🇺🇸' },
+    { code: 'de', name: 'German', flag: '🇩🇪' },
+    // Add more languages as needed
+  ];
+
+export default function Translator() {
+    
+  const [inputLanguage, setInputLanguage] = useState('en');
+  const [outputLanguage, setOutputLanguage] = useState('de');
+
+  const handleInputLanguageChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setInputLanguage(e.target.value);
+  };
+
+  const handleOutputLanguageChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setOutputLanguage(e.target.value);
+  };
     return (
-        <div className={'translator-container'}>
-            
-            <div className="translator-row">
-                <input  type="text" id="user-prompt" name="user-input"/>
-        
-                <div className={'translator-container-item'}>
-                    <select name="origin-lang" id="lang-select">
-                        <option value="">Input Language</option>
-                        <option value="english">English</option>
-                    </select>
+        <div className={"container"}>
+            <main className={"main"}>
+                <div className={"inputGroup"}>
+                    <input type="text" className={"input"} placeholder="type a word or topic" />
+                    <div className={"selectGroup"}>
+                        <select value={inputLanguage} onChange={handleInputLanguageChange} className={"select"}>
+                            {languages.map(lang => (
+                            <option key={lang.code} value={lang.code}>
+                                {lang.flag} {lang.name}
+                            </option>
+                            ))}
+                        </select>
+                        <select value={outputLanguage} onChange={handleOutputLanguageChange} className={"select"}>
+                            {languages.map(lang => (
+                            <option key={lang.code} value={lang.code}>
+                                {lang.flag} {lang.name}
+                            </option>
+                            ))}
+                        </select>
+                    </div>
                 </div>
-                {/* <div className={'translator-box'}>
-                    <textarea id="origin-lang" name="origin-lang" />
-                </div> */}
-                
-            
-                <div className={'translator-container-item'}>
-                    <select name="origin-lang" id="lang-select">
-                        <option value="">Output Language</option>
-                        <option value="german">German</option>
-                    </select>
-                </div>
-                {/* <div className={'translator-box'}>
-                    <textarea id="lang-text" name="lang-text"/>
-                </div> */}
-            </div>
-            <div className={'button-container'}>
-                <button className={'submit-button'} type='submit'>Create Dialogue</button>
-            </div>
-
-
+                <button className={"button"}>Create Dialogue</button>
+            </main>
         </div>
     )
 }
